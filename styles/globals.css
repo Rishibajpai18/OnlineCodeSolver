@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&family=Yusei+Magic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+:root{
+  --primar-color : #FEDDBE;
+  --text-color : #0d0d0d;
+  --asccent-color:#d9376e;
+  --secondary-bg:#fffffe;
+  --font-style: 'Space Mono', monospace;
+  --font-2: 'Yusei Magic', sans-serif;
+  --code-color: #f3d2c1;
+  --code-bg: #232946;
+  --main-bg: #eff0f3;
+  --sucess-toast:#2cb67d;
+  --error-toast:#de003b;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background: var(--main-bg);  /* fallback for old browsers */
+    
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+/* pre { display: inline} */
+.special{
+  color: var(--asccent-color);
+}
+.active{
+  scale: 1.2;
+  transition: all 0.5s;
+  color: var(--asccent-color);
+  
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+li{
+  list-style: none;
+}
+.curP{
+  cursor: pointer;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+.fc{
+  flex-direction: column;
+}
+ /* ---------------------- navigation ------------------------ */
+.navHead{
+  position: sticky;
+  top: 0%;
+  right: 0%;
+  left: 0%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--main-bg);
+  z-index: 8888;
+ }
+ .logo{
+  font-family: 'Chakra Petch', sans-serif;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: var(--asccent-color);
+ }
+.hameIcon{
+  display: none;
+  
+}
+.navigations{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.addPost{
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+.navItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all .5s;
+
+}
+.navigationItems{
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  
+}
+.navItem:hover{
+  color: var(--asccent-color);
+  scale: 1.2;
+  transition: all .5s;
+}
+/* .addPost a{
+  font-size: x-large;
+} */
+
+/* --------------------landing page ---------------------------------- */
+
+.landing{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0rem 2rem;
+  min-height: 70vh;
+}
+.slogan{
+  font-size: 5vw;
+  color: var(--asccent-color);
+  font-family: var(--font-2);
+}
+.sloganHelper{
+  font-size: 1.8vw;
+  text-align: center;
+  
+}
+.buttonEffect{
+  border: none;
+  outline: none;
+  background-color: var(--asccent-color);
+  color: var(--secondary-bg);
+  margin-top: 1rem;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 3px;
+}
+
+
+ /* ------------posts ------------------------------------ */
+
+.allPost, .userPosts{
+  margin-top: 5rem;
+  padding: 2rem;
+  display: flex;
+  width: 100%;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.postcard{
+  width: 100%;
+  margin-bottom: 3rem;
+}
+.userDet{
+  font-size: larger;
+  margin: .5rem 0;
+}
+.postTitle{
+  color: var(--asccent-color);
+  font-size: 2rem;
+}
+/* .postdata{
+  width: 100%;
+} */
+pre{
+  /* background-color: var(--secondary-ascent); */
+  background-color: var(--code-bg);
+  max-height: 60vh;
+  overflow: scroll;
+  padding: 1rem;
+  color: var(--code-color);
+  font-family: var(--font-style);
+  font-size: small;
+}
+.postOptions{
+  position: absolute;
+  right: 3rem;
+}
+.options{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .4rem;
+  margin-top: 1rem;
+}
+.copytoClip, .deletePost{
+
+  color: var(--text-color);
+  background-color: var(--asccent-color);
+  border-radius: 4px;
+  padding: 5px;
+}
+.copytoClipH{
+  position: relative;
+  top: 1rem;
+}
+.copytoClipH ion-icon{
+  position: absolute;
+  right: 1rem;
+  padding: 5px;
+  background-color: var(--asccent-color);
+  border-radius: 4px;
+}
+
+
+ /* ------------------crate post page --------------------------- */
+
+.container{
+  margin-top: 3rem;
+  padding: 2rem;
+}
+.firstloginbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.firstloginbtn a{
+  width: max-content;
+  padding: 1rem;
+  background-color: var(--asccent-color);
+  color: var(--text-color);
+}
+
+.cinput{
+  border: 1px dashed gray;
+  outline: none;
+  padding: .5rem;
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  margin:.5rem 0;
+  border-radius: .4rem;
+}
+.flex_c{
+  display: flex;
+  flex-direction: column;
+  
+}
+#orig_code{
+  resize: none;
+  white-space: pre;
+}
+.mrb_1{
+  margin-bottom: 1rem;
+}
+.submitBtn{
+  /* margin: 1rem 0; */
+  padding: 1rem;
+  background-color: var(--secondary-bg);
+  color: var(--text-color);
+  width: max-content;
+  cursor: pointer;
+}
+.submitBtn:hover,
+.submitBtn:active{
+  background-color: var(--asccent-color);
+  transition: all .3s;
+}
+
+/* -----------------------------loginForm------------------------ */
+.loginForm{
+  padding: 3rem 10rem;
+  
+}
+.showpass{
+  font-size: small;
+  cursor: pointer;
+}
+.errorMsg{
+  color: red;
+  font-size: smaller;
+}
+.green{
+  border-color: rgb(13, 255, 13);
+}
+.disabled{
+  pointer-events: none;
+}
+.switchAccountState{
+  margin-top: 1rem;
+  color: var(--text-color);
+}
+.switchAccountState a{
+  color: var(--asccent-color);
+  margin-left: .5rem;
+}
+.forgetPass{
+  color: var(--text-color);
+}
+.forgetPass a{
+  color: var(--asccent-color);
+}
+
+
+
+
+/* -----------------toast ------------------ */
+.toastS{
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  background-color: var(--sucess-toast);
+  padding: 1rem;
+  z-index: 99999;
+}
+.toastF{
+  position: fixed;
+  top: 4rem;
+  right: 2rem;
+  background-color: var(--error-toast);
+  padding: 1rem;
+}
+
+/* --------------------Profile ----------------------- */
+
+.profileView{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  flex-direction: column;
+}
+.logOutbtn{
+  margin-top: 3rem;
+  padding: 1rem;
+  background-color: rgba(241, 40, 40, 0.648);
+  color: white;
+  cursor: pointer;
+}
+
+/* ------------------spinner ------------------------------------ */
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: var(--asccent-color);
+  text-transform: uppercase;
+  animation: flip 1s infinite;
+  animation-delay: calc(.1s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+
+/* ----------------------search box ----------------------------- */
+.search{
+  width: 80%;
+  margin: auto;
+}
+.searchBox{
+  padding: 1rem;
+  background-color: var(--secondary-bg);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  border-radius: 8px;
+  
+}
+.searchBox ion-icon{
+  font-size: 1.3rem;
+  z-index: 99;
+}
+#query{
+  padding: .5rem;
+  outline: none;
+  border: none;
+  /* background-color:  */
+  color: var(--text-color);
+  width: 100%;
+}
+.search_ic ion-icon{
+  z-index: 99;
+  color: var(--asccent-color);
+}
+
+/* ---------------------- Modal ------------------------------------ */
+.Modalopen{
+  display: block;
+}
+.Modalclose{
+  display: none;
+}
+.modal {
+   
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+  position: relative;
+  background-color: var(--code-bg);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+.close {
+  color: var(--text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: #005774a3;
+  color: white;
+}
+.modal-body {padding: 2px 16px;}
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #005774a3;
+  color: white;
+}
+
+/* -------------- handler page css ---------------- */
+.howToUse{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 3rem;
+}
+.guide{
+  font-size: large;
+  font-weight: bold;
+}
+.way1, .way2{
+  font-size: medium;
+  font-weight: normal;
+}
+.codeSnipsetForWay1{
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding: .2rem 1rem;
+}
+
+/* ------------------- code post view page ---------------------- */
+.codePostContainer{
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleOfCodePost{
+  font-size: larger;
+  font-weight: bold;
+  text-transform: capitalize;
+  
+}
+.wrtierOfCodePost{
+  color: var(--asccent-color);
+  margin-bottom: 1rem;
+
+}
+.codeInPOstView{
+  white-space: pre;
+  background-color: var(--code-bg);
+  display: block;
+  color: var(--code-color);
+  padding: 1rem;
+  overflow: scroll;
+  
+}
+.addPostForPublicButton{
+  padding: 1rem;
+  background-color: var(--asccent-color);
+  /* outline: none; */
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* ------------- Profile nav starts here --------------------- */
+.profileNav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 1rem;
+  background-color: var(--secondary-bg);
+  border-radius: 2.5rem;
+  z-index: 999;
+}
+.profileNavItems{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .2em;
+  
+}
+.profileitem{
+  padding: 0 1rem;
+  border-radius: 2.5rem;
+  transition: all .5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.profileItemName{
+  font-size: x-small;
+}
+.profileitem:hover,
+.profileNavActive{
+  color: var(--asccent-color) !important;
+  transition: all .2s;
+}
+
+/* -------------- dashboard css ----------------- */
+.profilePageContainer{
+  padding: 2rem;
+}
+.profileHead{
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.userDisplayName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.userImage{
+  background-color: var(--secondary-bg);
+  width: max-content;
+  border-radius: 50%;
+  padding: 1rem;
+}
+.isEmailVerified{
+  text-align: center;
+  margin: 1rem;
+  padding: .5rem;
+  border-radius: 2rem;
+  font-size: xx-small;
+  color: var(--main-bg);
+  cursor: pointer;
+}
+.bg_col_verified{
+  background-color: var(--sucess-toast);
+}
+.bg_col_unverified{
+  background-color: var(--error-toast);
+}
+.loadMorebutton{
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  margin-bottom: 6rem;
+}
+.username{
+  font-size: x-large;
+}
+.profileStat{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+}
+.statCard{
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: .5rem;
+  border-radius: 4px;
+  width: 10rem;
+  font-weight: bold;
+}
+.totalCodeCard{
+  background-color: rgb(0, 195, 255);
+}
+.privateCodeCard{
+  background-color: rgb(0, 255, 98);
+}
+.publicCodeCard{
+  background-color: rgb(255, 55, 0);
+}
+ /* --------------- Code Page Css --------------- */
+ .noCodeICon ion-icon{
+  font-size: 4rem;
+  color: var(--asccent-color);
+ }
+ .bottomMenu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+ }
+ .shareButton{
+  /* font-size: .6rem; */
+  /* width: max-content; */
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+
+}
+.shareButton:hover,
+.likePostButton:hover{
+  color: var(--asccent-color);
+}
+.likePostButton{
+  display: flex;
+
+  align-items: center;
+  gap: .2rem;
+}
+.likedPost{
+  color: var(--asccent-color);
+}
+
+.floatingButtonToGOUp{
+  position: fixed;
+  bottom: 2rem;
+  right: 1rem;
+  z-index: 99;
+  background-color: var(--asccent-color);
+  color: var(--secondary-bg);
+  cursor: pointer;
+  padding: .4rem;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 650px) {
+  .active{
+    background-color: var(--code-bg);
+  }
+  .loginForm{
+    padding: 3rem 5rem; 
+  }
+  .slogan{
+    font-size: 8vw;
+  }
+  .sloganHelper{
+    font-size: 4.5vw;
+  }
+  .hameIcon{
+    display: block;
+    position: absolute;
+    right: 1rem;
+    font-size: 2rem;
+    z-index: 9999;
+  }
+  .navigations a{
+    padding: .6rem;
+    transition: all .5s;
+    /* z-index: ; */
+  }
+  .navigations a:hover{
+    background-color: var(--code-bg);
+    /* width: max-content; */
+    transition: .5s;
+    color: #ff1361;
+  }
+  .navigations{
+    position: absolute;
+    inset: 0 0 0 100%;
+    overflow: hidden;
+    height: 100vh;
+    transition: all .5s;
+    /* padding: 1rem; */
+  }
+  .navigationItems{
+    flex-direction: column;
+    background-color: var(--asccent-color);
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    color: var(--text-color);
+  }
+  .navOpen{
+    
+    inset: 0 0 0 10%;
+  }
+  .navClose{
+    inset: 0 0 0 100%;
+  }
+
+  .postTitle{
+    font-size: 1rem;
+  }
+  
+  .shareButton{
+    font-size: .6rem;
+  }
+}
