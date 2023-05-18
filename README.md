@@ -1,1 +1,1 @@
-# CodeViral
+# Online code solver
